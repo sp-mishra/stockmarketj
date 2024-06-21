@@ -1,0 +1,19 @@
+# Generated manifest.yml based on template version 0.1.0
+# appName = stockmarket4j
+# language=java
+# multitenancy=
+---
+applications:
+# -----------------------------------------------------------------------------------
+# Backend Service
+# -----------------------------------------------------------------------------------
+- name: stockmarket4j-srv
+  random-route: true  # for development only
+  path: srv/target/stockmarket4j-exec.jar
+  memory: 1G
+  disk_quota: 512M
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+  buildpack: java_buildpack
+  services:
+
