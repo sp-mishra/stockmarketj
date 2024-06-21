@@ -715,3 +715,6 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 .idea/*
+.flattened-pom.xml
+/srv/src/gen/
+/srv/src/main/resources/edmx/
