@@ -1,0 +1,40 @@
+#@server = http://localhost:4004
+@server = http://localhost:63246
+
+
+### GenericService.MarketHolidays
+GET {{server}}/odata/v4/generic/MarketHolidays
+Content-Type: application/json
+
+
+### GenericService.MarketHolidays
+POST {{server}}/odata/v4/generic/MarketHolidays
+Content-Type: application/json
+
+{
+  "ID": "8468100a-14f0-467f-9b2e-8b8cd787691c",
+  "product": "product-8468100",
+  "tradingDate": "2021-11-15",
+  "weekDay": "WEDNESDAY",
+  "description": "description-8468100",
+  "serialNumber": 1
+}
+
+
+### GenericService.MarketHolidays
+PATCH {{server}}/odata/v4/generic/MarketHolidays/8468100a-14f0-467f-9b2e-8b8cd787691c
+Content-Type: application/json
+
+{
+  "ID": "8468100a-14f0-467f-9b2e-8b8cd787691c",
+  "product": "product-8468100",
+  "tradingDate": "2021-11-15",
+  "weekDay": "WEDNESDAY",
+  "description": "description-8468100",
+  "serialNumber": 1
+}
+
+
+### GenericService.MarketHolidays
+DELETE {{server}}/odata/v4/generic/MarketHolidays/8468100a-14f0-467f-9b2e-8b8cd787691c
+Content-Type: application/json

@@ -38,18 +38,22 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.sap.cds</groupId>
-			<artifactId>cds-feature-postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.h2database</groupId>-->
+<!--			<artifactId>h2</artifactId>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>com.sap.cds</groupId>-->
+<!--			<artifactId>cds-feature-postgresql</artifactId>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.xerial</groupId>
@@ -120,7 +124,7 @@
 						<configuration>
 							<commands>
 								<command>build --for java</command>
-								<command>deploy --to h2 --dry &gt; "${project.basedir}/src/main/resources/schema-h2.sql"</command>
+<!--								<command>deploy &#45;&#45;to h2 &#45;&#45;dry &gt; "${project.basedir}/src/main/resources/schema-h2.sql"</command>-->
 								<command>deploy --to sqlite --dry &gt; "${project.basedir}/src/main/resources/schema-sqlite.sql"</command>
 							</commands>
 						</configuration>

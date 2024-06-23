@@ -718,3 +718,5 @@ fabric.properties
 .flattened-pom.xml
 /srv/src/gen/
 /srv/src/main/resources/edmx/
+/tmp/
+/srv/src/main/resources/.reloadtrigger
