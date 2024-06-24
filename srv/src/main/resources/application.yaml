@@ -1,41 +1,36 @@
 
 ---
 spring:
+  web:
+    resources:
+      static-locations: file:./app
+  datasource:
+    password: postgres
+    embedded-database-connection: none
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/stockdb
+    username: postgres
   config:
     activate:
       on-profile: default
-  datasource:
-    url: "jdbc:sqlite:file:./db/localdb"
-    driver-class-name: org.sqlite.JDBC
-    username: sa
-    password: sa
-  sql:
-    init:
-#      schema-locations: classpath:schema-h2.sql
-      schema-locations: classpath:schema-sqlite.sql
-      mode: always
-  web:
-    resources:
-      static-locations: "file:./app"
 cds:
-#  odata-v4:
-#    endpoint:
-#      path: "/api"
   data-source:
+    security:
+      mock:
+        users[1]:
+          roles[0]: reviewer
+          name: martha
+        users[2]:
+          roles[0]: processor
+          name: amy
+        users[3]:
+          roles[0]: admin
+          password: admin
+          name: admin
+        users[0]:
+          name: rose
     auto-config:
-      enabled: true
-    security.mock.users:
-      - name: rose
-      - name: martha
-        roles:
-          - reviewer
-      - name: amy
-        roles:
-          - processor
-      - name: admin
-        password: admin
-        roles:
-          - admin
+      enabled: false
 ---
 spring:
   config.activate.on-profile: default
@@ -44,13 +39,27 @@ server:
   port: 4004
 
 ---
+#spring:
+#  config.activate.on-profile: dev-sqlite
+#  sql.init.mode: always
+#  datasource:
+#    url: "jdbc:sqlite:./tmp/db.sqlite"
+#    driver-class-name: org.sqlite.JDBC
+#    hikari:
+#      maximum-pool-size: 1
+#server:
+#  port: 63246
+
+
+---
 spring:
   config.activate.on-profile: dev
   sql.init.mode: always
   datasource:
-    url: "jdbc:sqlite:./tmp/db.sqlite"
-    driver-class-name: org.sqlite.JDBC
-    hikari:
-      maximum-pool-size: 1
+    password: postgres
+    embedded-database-connection: none
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/stockdb
+    username: postgres
 server:
   port: 63246

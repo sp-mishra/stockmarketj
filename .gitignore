@@ -720,3 +720,6 @@ fabric.properties
 /srv/src/main/resources/edmx/
 /tmp/
 /srv/src/main/resources/.reloadtrigger
+**/*.sqlite
+*.iml
+node_modules/

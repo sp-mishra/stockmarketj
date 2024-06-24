@@ -14,6 +14,6 @@ entity Holidays: cuid {
 product: String;
 tradingDate: Date;
 weekDay: DayOfWeek;
-description: String;
+description: String default 'Trade Closed for Holiday';
 serialNumber: Integer;
 }

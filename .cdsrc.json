@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@cap-js/postgres": "^1"
+  },
+  "requires":{
+    "db":{
+      "credentials":{
+        "kind": "postgres",
+        "host":"localhost",
+        "port":5432,
+        "user":"postgres",
+        "password":"postgres",
+        "database":"stockdb",
+        "impl": "cds-pg"
+      }
+    }
+  }
+}
