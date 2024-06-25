@@ -1,4 +1,5 @@
 using { cuid } from '@sap/cds/common';
+using Product from './Product';
 
 type DayOfWeek : String enum {
   MONDAY;
@@ -11,7 +12,7 @@ type DayOfWeek : String enum {
 }
 
 entity Holidays: cuid {
-product: String;
+product: Association to Product;
 tradingDate: Date;
 weekDay: DayOfWeek;
 description: String default 'Trade Closed for Holiday';

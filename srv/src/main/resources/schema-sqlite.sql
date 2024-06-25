@@ -1,12 +1,13 @@
 
 DROP VIEW IF EXISTS GenericService_JobsExecuted;
 DROP VIEW IF EXISTS GenericService_MarketHolidays;
+DROP TABLE IF EXISTS Product;
 DROP TABLE IF EXISTS JobsExecuted;
 DROP TABLE IF EXISTS Holidays;
 
 CREATE TABLE Holidays (
   ID NVARCHAR(36) NOT NULL,
-  product NVARCHAR(255),
+  product_shortForm NVARCHAR(255),
   tradingDate DATE_TEXT,
   weekDay NVARCHAR(255),
   description NVARCHAR(255) DEFAULT 'Trade Closed for Holiday',
@@ -20,16 +21,22 @@ CREATE TABLE JobsExecuted (
   createdBy NVARCHAR(255),
   modifiedAt TIMESTAMP_TEXT,
   modifiedBy NVARCHAR(255),
-  executedBy NVARCHAR(255),
-  status NVARCHAR(255),
+  executedBy NVARCHAR(255) NOT NULL,
+  status NVARCHAR(255) NOT NULL,
   jobName NVARCHAR(255),
-  additionalInfo NVARCHAR(255),
+  additionalInfo NVARCHAR(255) NULL,
   PRIMARY KEY(ID)
+); 
+
+CREATE TABLE Product (
+  shortForm NVARCHAR(255) NOT NULL,
+  longForm NVARCHAR(255),
+  PRIMARY KEY(shortForm)
 ); 
 
 CREATE VIEW GenericService_MarketHolidays AS SELECT
   Holidays_0.ID,
-  Holidays_0.product,
+  Holidays_0.product_shortForm,
   Holidays_0.tradingDate,
   Holidays_0.weekDay,
   Holidays_0.description,

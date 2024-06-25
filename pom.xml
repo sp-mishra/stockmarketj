@@ -19,7 +19,7 @@
 		<cds.services.version>2.10.1</cds.services.version>
 		<spring.boot.version>3.2.6</spring.boot.version>
 		<cds.install-cdsdk.version>7.9.3</cds.install-cdsdk.version>
-
+		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 		<cds.install-node.downloadUrl>https://nodejs.org/dist/</cds.install-node.downloadUrl>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

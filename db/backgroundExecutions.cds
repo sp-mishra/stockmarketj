@@ -1,10 +1,10 @@
 using { cuid, managed } from '@sap/cds/common';
 
 entity JobsExecuted: cuid, managed {
-  executedBy : String;
-  status : JobStatus;
+  executedBy : String not null;
+  status : JobStatus not null;
   jobName : String;
-  additionalInfo : String;
+  additionalInfo : String null;
 }
 
 type JobStatus : String enum {

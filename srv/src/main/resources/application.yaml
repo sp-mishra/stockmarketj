@@ -31,6 +31,9 @@ cds:
           name: rose
     auto-config:
       enabled: false
+
+grklab.nse.scheduler.holiday: "0 0 0 * * ?"
+
 ---
 spring:
   config.activate.on-profile: default
@@ -63,3 +66,6 @@ spring:
     username: postgres
 server:
   port: 63246
+
+
+grklab.nse.scheduler.holiday: "0/30 * * * * ?"
