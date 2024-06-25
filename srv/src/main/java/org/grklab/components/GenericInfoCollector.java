@@ -26,11 +26,9 @@ import cds.gen.Holidays;
 import cds.gen.Holidays_;
 import cds.gen.Product_;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
 
 @Component
 @Slf4j
