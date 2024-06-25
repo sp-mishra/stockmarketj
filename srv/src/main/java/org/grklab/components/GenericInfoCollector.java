@@ -84,7 +84,7 @@ public class GenericInfoCollector {
 
                         final JsonNode jsonNode = objectMapper.readTree(responseBody);
 
-                        for (String node : nodes) {
+                        for (final String node : nodes) {
                             if (jsonNode.has(node)) {
                                 final JsonNode nodeData = jsonNode.get(node);
 
