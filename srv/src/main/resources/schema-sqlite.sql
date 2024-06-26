@@ -1,6 +1,7 @@
 
 DROP VIEW IF EXISTS GenericService_JobsExecuted;
 DROP VIEW IF EXISTS GenericService_MarketHolidays;
+DROP TABLE IF EXISTS EquityList;
 DROP TABLE IF EXISTS Product;
 DROP TABLE IF EXISTS JobsExecuted;
 DROP TABLE IF EXISTS Holidays;
@@ -32,6 +33,23 @@ CREATE TABLE Product (
   shortForm NVARCHAR(255) NOT NULL,
   longForm NVARCHAR(255),
   PRIMARY KEY(shortForm)
+); 
+
+CREATE TABLE EquityList (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP_TEXT,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP_TEXT,
+  modifiedBy NVARCHAR(255),
+  symbol NVARCHAR(255),
+  companyName NVARCHAR(255),
+  series NVARCHAR(255),
+  dateOfListing DATE_TEXT,
+  paidUpValue DOUBLE,
+  marketLot DOUBLE,
+  isinNumber NVARCHAR(255),
+  faceValue DOUBLE,
+  PRIMARY KEY(ID)
 ); 
 
 CREATE VIEW GenericService_MarketHolidays AS SELECT

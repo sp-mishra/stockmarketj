@@ -32,7 +32,13 @@ cds:
     auto-config:
       enabled: false
 
-grklab.nse.scheduler.holiday: "0 0 0 * * ?"
+grklab:
+  nse-scheduler-holiday: "0 0 0 * * ?"
+  nse-scheduler-holiday-enable: true
+  nse-scheduler-equitylist-enable: true
+  nse-scheduler-equitylist: "0 0 0 * * ?"
+  nse-base-url: "https://www.nseindia.com"
+
 
 ---
 spring:
@@ -67,5 +73,8 @@ spring:
 server:
   port: 63246
 
-
-grklab.nse.scheduler.holiday: "0/30 * * * * ?"
+grklab:
+  nse-scheduler-holiday: "0/30 * * * * ?"
+  nse-scheduler-equitylist: "0/30 * * * * ?"
+  nse-scheduler-holiday-enable: false
+  nse-scheduler-equitylist-enable: false
