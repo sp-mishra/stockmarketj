@@ -49,7 +49,7 @@
     "dependencies": {
         "@cap-js/postgres": "^1.8.0",
         "@sap/cds": "^7",
-        "@sap/cds-dk": "^7.9.4"
+        "@sap/cds-dk": "^8.2.0"
     },
     "devDependencies": {
         "cds-plugin-ui5": "^0.9.3"
